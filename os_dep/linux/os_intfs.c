@@ -2817,7 +2817,8 @@ static int netdev_vir_if_close(struct net_device *pnetdev)
 #endif
 
 #ifdef CONFIG_IOCTL_CFG80211
-    struct wireless_dev *wdev = padapter->rtw_wdev;
+    struct wireless_dev *wdev;
+    wdev = padapter->rtw_wdev;
 	wdev->iftype = NL80211_IFTYPE_MONITOR;
 	wdev->current_bss = NULL;
 	rtw_scan_abort(padapter);
